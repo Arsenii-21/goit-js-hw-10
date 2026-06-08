@@ -16,3 +16,72 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+/* Timer page styles */
+.timer-page {
+  font-family: Arial, sans-serif;
+  padding: 24px;
+}
+.timer-page .controls { margin-bottom: 18px; display:flex; align-items:center; gap:8px }
+.timer-page #datetime-picker { padding: 8px; font-size: 16px; }
+.timer-page button[disabled] { opacity: 0.5; cursor: not-allowed; }
+.timer-page .timer { display: flex; gap: 12px; margin-top: 12px; }
+.timer-page .field { background:#f3f3f3; padding:12px; border-radius:6px; text-align:center; min-width:80px }
+.timer-page .value { display:block; font-size:24px; font-weight:700 }
+.timer-page .label { display:block; font-size:12px; color:#555 }
+.timer-page .btn { padding: 8px 12px; font-size: 16px; border-radius: 6px; border: 1px solid #1976d2; background: #1976d2; color: #fff; cursor: pointer; transition: transform .08s ease, box-shadow .08s ease; }
+.timer-page .btn:hover { box-shadow: 0 6px 18px rgba(25,118,210,0.15); transform: translateY(-2px); }
+.timer-page .btn:active { transform: translateY(0); }
+.timer-page .back-btn { background: #fff; color: #1976d2; border: 1px solid #1976d2; }
+.timer-page .back-btn:hover { background: #f7fbff; }
+.timer-page button[data-start] { margin-left: 6px; }
+
+/* Snackbar / Promise generator page */
+.snackbar-page .form { display:flex; flex-direction:column; gap:12px; max-width:360px; }
+.snackbar-page label { display:flex; flex-direction:column; font-size:14px; color:#222 }
+.snackbar-page input[type="number"] { padding:8px; font-size:16px; border-radius:6px; border:1px solid #ccc }
+.snackbar-page fieldset { border:1px solid #e6e6e6; padding:18px 12px 12px 12px; border-radius:6px; position:relative }
+.snackbar-page legend { font-weight:600; background: #fff; padding: 0 10px; margin-left: 8px; display:inline-block; transform: translateY(-50%); position: relative }
+.snackbar-page .btn { padding: 8px 12px; font-size: 16px; border-radius: 6px; border: 1px solid #1976d2; background: #1976d2; color: #fff; cursor: pointer; }
+/* fieldset labels: make radio options horizontal and vertically centered */
+.snackbar-page fieldset .options { display:flex; gap:28px; align-items:center; padding-top:6px }
+.snackbar-page fieldset label { display:flex; align-items:center; gap:10px; margin:0; font-size:18px }
+.snackbar-page fieldset input[type="radio"] { width:18px; height:18px }
+
+/* Layout: keep form top-left and content tidy */
+.snackbar-page .container { display: grid; grid-template-columns: 420px 1fr; grid-template-rows: auto 1fr; grid-template-areas: "header header" "form preview"; gap: 32px; align-items: start; padding-top: 12px; margin: 0; max-width: none; padding-left: 20px }
+.snackbar-page .page-header { display:flex; align-items:center; gap:12px; margin-bottom:12px }
+.snackbar-page h1 { margin:0; font-size:28px }
+.snackbar-page .form { max-width: 420px; }
+.snackbar-page .full { width:100%; height:44px; font-size:16px }
+/* place elements into grid areas */
+.snackbar-page .page-header { grid-area: header }
+.snackbar-page .form { grid-area: form }
+.snackbar-page .snack-preview { grid-area: preview }
+.snackbar-page .container { justify-items: start }
+
+/* iziToast custom styling to match timer visuals */
+.iziToast.custom-toast {
+  border-radius: 12px !important;
+  padding: 14px 20px !important;
+  font-family: inherit !important;
+  color: #fff !important;
+  min-width: 520px !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.iziToast.custom-toast .iziToast-body { padding: 0 !important; }
+.iziToast.custom-toast.success { background: #43c28b !important; }
+.iziToast.custom-toast.error { background: #f5655a !important; }
+.iziToast.custom-toast .iziToast-icon {
+  margin-right: 12px !important;
+  font-size: 20px !important;
+}
+
+/* ensure toasts appear near top-left with some offset from header */
+/* override default container spacing if needed */
+.iziToast-overlay {
+  pointer-events: none;
+}
+
+
