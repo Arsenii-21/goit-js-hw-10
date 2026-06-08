@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise Generator</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="snackbar-page">
+    <main class="container">
+      <div class="page-header">
+        <button type="button" class="back-btn btn">Go back</button>
+        <h1>Promise generator</h1>
+      </div>
+
+      <form class="form" id="promise-form">
+        <label>
+          Delay (ms)
+          <input type="number" name="delay" required min="0" />
+        </label>
+
+        <fieldset>
+          <legend>State</legend>
+          <div class="options">
+            <label>
+              <input type="radio" name="state" value="fulfilled" required />
+              Fulfilled
+            </label>
+            <label>
+              <input type="radio" name="state" value="rejected" required />
+              Rejected
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn full">Create notification</button>
+      </form>
+
+      <div class="snack-preview">
+        <!-- toasts appear in overlay on the right -->
+      </div>
+    </main>
+
+    <script type="module" src="./js/2-snackbar.js"></script>
+  </body>
+</html>

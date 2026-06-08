@@ -48,6 +48,8 @@ form.addEventListener('submit', event => {
       console.log(`❌ Rejected promise in ${ms}ms`);
     });
 
+});
+
 // back button behavior (like timer)
 const backBtn = document.querySelector('.back-btn');
 if (backBtn) {
@@ -55,4 +57,3 @@ if (backBtn) {
     window.location.href = './index.html';
   });
 }
-});
